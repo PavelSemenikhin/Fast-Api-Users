@@ -6,15 +6,16 @@ from sqlalchemy import Integer
 from sqlalchemy.orm import Mapped, mapped_column
 
 from core.models import Base
+from core.types import USER_ID_TYPE
 
 if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
 
 
-class User(Base, SQLAlchemyBaseUserTable[int]):
+class User(Base, SQLAlchemyBaseUserTable[USER_ID_TYPE]):
     __tablename__ = "users"
 
-    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    id: Mapped[USER_ID_TYPE] = mapped_column(Integer, primary_key=True)
 
     @classmethod
     def get_user_db(cls, session: "AsyncSession"):

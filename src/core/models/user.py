@@ -18,5 +18,5 @@ class User(Base, SQLAlchemyBaseUserTable[USER_ID_TYPE]):
     id: Mapped[USER_ID_TYPE] = mapped_column(Integer, primary_key=True)
 
     @classmethod
-    def get_user_db(cls, session: "AsyncSession"):
+    def get_db(cls, session: "AsyncSession"):
         return SQLAlchemyUserDatabase(session, User)

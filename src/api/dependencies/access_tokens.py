@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from sqlalchemy.ext.asyncio import AsyncSession
 
 
-async def get_access_token_db(
+async def get_access_tokens_db(
         session: "AsyncSession" = Depends(async_get_db),
 ):
-    yield AccessToken.get_access_tokens_db(session=session)
+    yield AccessToken.get_db(session=session)

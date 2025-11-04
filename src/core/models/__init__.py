@@ -3,6 +3,7 @@ __all__ = (
     "Base",
     "User",
     "async_get_db",
+    "AccessToken",
 )
 
 
@@ -10,3 +11,4 @@ from .db_helper import db_helper
 from .base_model import Base
 from .user import User
 from .db_helper import async_get_db
+from .access_token import AccessToken

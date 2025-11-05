@@ -1,4 +1,4 @@
-zfrom fastapi import APIRouter
+from fastapi import APIRouter
 
 from api.api_v1.fastapi_users_routers_helper import fastapi_users
 from api.dependencies.authentication.backend import authentication_backend
